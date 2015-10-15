@@ -25,3 +25,4 @@ less
 angular
 angular:angular-animate
 angular:angular-aria
+angular:angular-messages
