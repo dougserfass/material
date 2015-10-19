@@ -7,17 +7,36 @@ app.controller('AppCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav){
 
 }]);*/
 
-angular
+
+
+
+
+/*angular
   .module('inputIconDemo', ['ngMaterial', 'ngMessages'])
   .controller('DemoCtrl', function($scope) {
     $scope.user = {
-      name: 'John Doe',
+      name: '',
       email: '',
       phone: '',
-      address: 'Mountain View, CA',
-      donation: 19.99
+      address: ''
     };
-  });
+  });*/
+
+angular
+  .module('inputIconDemo', ['ngMaterial', 'ngMessages'])
+  .controller('DemoCtrl', ['$scope', function($scope) {
+    $scope.user = {
+      name: '',
+      email: '',
+      phone: '',
+      description: ''
+    };
+  }]);
+
+
+
+
+
 
 var themeIcons = ['$mdIconProvider' , function ($mdIconProvider) {
 

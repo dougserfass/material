@@ -36,16 +36,14 @@
     <br/>
     <md-content layout-padding class="autoScroll">
       <md-input-container class="md-icon-float">
-        <!-- Use floating label instead of placeholder -->
-        <label>Name</label>
         <!--<md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>-->
         <md-icon md-svg-icon="social:ic_person_24px"></md-icon>
-        <input ng-model="user.name" type="text">
+        <input ng-model="user.name" type="text" placeholder="Name (required)" ng-required="true">
       </md-input-container>
       <md-input-container md-no-float>
         <!--<md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon>-->
         <md-icon md-svg-icon="communication:ic_phone_24px"></md-icon>
-        <input ng-model="user.phone" type="text" placeholder="Phone Number">
+        <input ng-model="user.phone" type="text" placeholder="Phone Number (required)" ng-required="true">
       </md-input-container>
       <md-input-container >
         <!-- Use floating placeholder instead of label -->
@@ -53,16 +51,9 @@
         <md-icon md-svg-icon="communication:ic_email_24px"></md-icon>
         <input ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true">
       </md-input-container>
-      <md-input-container md-no-float>
-        <!--<md-icon md-svg-src="img/icons/ic_place_24px.svg" style="display:inline-block;"></md-icon>-->
-        <md-icon md-svg-icon="communication:ic_location_on_24px"></md-icon>
-        <input ng-model="user.address" type="text" placeholder="Address" >
-      </md-input-container>
-      <md-input-container class="md-icon-float md-icon-right">
-        <label>Donation Amount</label>
-        <md-icon md-svg-src="img/icons/ic_card_giftcard_24px.svg"></md-icon>
-        <input ng-model="user.donation" type="number" step="0.01">
-        <md-icon md-svg-src="img/icons/ic_euro_24px.svg"></md-icon>
+      <md-input-container flex>
+        <md-icon md-svg-icon="image:ic_edit_24px"></md-icon>
+        <textarea ng-model="user.description" columns="1" md-maxlength="150" placeholder="Issue Description (required)" ng-required="true"></textarea>
       </md-input-container>
     </md-content>
   </div>
