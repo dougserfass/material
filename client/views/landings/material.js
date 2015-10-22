@@ -29,7 +29,7 @@ angular
       name: '',
       email: '',
       phone: '',
-      description: ''
+      message: ''
     };
   }]);
 
@@ -53,3 +53,30 @@ var themeIcons = ['$mdIconProvider' , function ($mdIconProvider) {
 
 angular.module('inputIconDemo')
   .config(themeIcons);
+
+Template.createCase.events({
+  'submit form': function(e) {
+    e.preventDefault();
+
+    var scope = angular.element(document.getElementById("MainWrap")).scope();
+
+    var aCase = {
+      //number: number.replace(/"/g,""),
+      name: scope.user.name,
+      phone: scope.user.phone,
+      email: scope.user.email,
+      message: scope.user.message
+    }
+
+
+    console.log(aCase.name);
+    console.log(aCase.phone);
+    console.log(aCase.email);
+    console.log(aCase.message);
+
+
+    alert(aCase.name+' '+aCase.phone+' '+aCase.email+' '+aCase.message);
+
+
+  }
+});

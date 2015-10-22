@@ -22,7 +22,11 @@
 </body>-->
 
 <body>
-  <div ng-app="inputIconDemo" ng-controller="DemoCtrl" layout="column" ng-cloak>
+{{> createCase}}
+</body>
+
+<template name="createCase">
+  <div id="MainWrap" ng-app="inputIconDemo" ng-controller="DemoCtrl" layout="column" ng-cloak>
     <md-toolbar layout="row">
       <div class="md-toolbar-tools">
         <h1>Company Name</h1>
@@ -35,6 +39,9 @@
     </md-toolbar>
     <br/>
     <md-content layout-padding class="autoScroll">
+
+      <form>
+
       <md-input-container class="md-icon-float">
         <!--<md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>-->
         <md-icon md-svg-icon="social:ic_person_24px"></md-icon>
@@ -53,8 +60,13 @@
       </md-input-container>
       <md-input-container flex>
         <md-icon md-svg-icon="image:ic_edit_24px"></md-icon>
-        <textarea ng-model="user.description" columns="1" md-maxlength="150" placeholder="Issue Description (required)" ng-required="true"></textarea>
+        <textarea ng-model="user.message" columns="1" md-maxlength="150" placeholder="Issue Description (required)" ng-required="true"></textarea>
       </md-input-container>
+
+      <md-button type='submit'>SUBMIT</md-button>
+
+      </form>
+
     </md-content>
   </div>
-</body>
+</template>
